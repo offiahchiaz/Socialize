@@ -35,23 +35,27 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Timeline</a>
-                        </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Friends</a>
-                        </li>
-                    </ul>
+                    @if (Auth::check())
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">Timeline</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">Friends</a>
+                            </li>
+                        </ul>
 
-                    <!-- Search form -->
-                    <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" 
-                        placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-                            Search
-                        </button>
-                    </form>
+                        <!-- Search form -->
+                        <form class="form-inline my-2 my-lg-0" action="/search">
+                            @csrf
+
+                            <input class="form-control mr-sm-2" type="search" 
+                            placeholder="Search" name="query" aria-label="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+                                Search
+                            </button>
+                        </form>
+                    @endif
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">

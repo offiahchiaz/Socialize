@@ -19,6 +19,10 @@
                             </div>
                             <div class="col-lg-4 col-lg-offset-3">
                                 <!-- Friends, friend requests -->
+                                @if (Auth::user()->hasFriendRequestPending($user))
+                                    <p>Waiting for {{ $user->name }} to accept your request.</p>
+                                @endif
+
                                 <h4>{{ $user->name }}'s friends.</h4>
 
                                 @if (!$user->friends()->count())

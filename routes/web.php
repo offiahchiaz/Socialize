@@ -21,3 +21,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/search', 'SearchController@getResults');
+Route::get('/user/{username}', 'ProfileController@getProfile');
+Route::get('/profile/edit', 'ProfileController@getEdit')->name('profile.edit');
+Route::post('/profile/edit', 'ProfileController@postEdit');

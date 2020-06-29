@@ -23,7 +23,14 @@
                                                 Firstname
                                             </label>
                                             <input type="text" name="firstname" 
-                                            class="form-control" id="firstname" value="{{ old('firstname') }}">
+                                            class="form-control @error('firstname') is-invalid @enderror" id="firstname" 
+                                            value="{{ old('firstname') ?: Auth::user()->firstname }}">
+
+                                            @error('firstname')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                         </div>
                                     </div>
 
@@ -33,7 +40,14 @@
                                                 Lastname
                                             </label>
                                             <input type="text" name="lastname" 
-                                            class="form-control" id="lastname" value="{{ old('lastname') }}">
+                                            class="form-control @error('lastname') is-invalid @enderror" id="lastname" 
+                                            value="{{ old('lastname') ?: Auth::user()->lastname }}">
+
+                                            @error('lastname')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
@@ -42,11 +56,18 @@
                                                 Location
                                             </label>
                                             <input type="text" name="location" 
-                                            class="form-control" id="location" value="{{ old('location') }}">
+                                            class="form-control @error('location') is-invalid @enderror" id="location" 
+                                            value="{{ old('location')  ?: Auth::user()->location }}">
+
+                                            @error('location')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                         </div>
                                     </div>
 
-                                    <div class="form-group">
+                                    <div class="form-group col-lg-12">
                                         <button type="submit" class="btn btn-default">Update</button>
                                     </div>
                                   </div>

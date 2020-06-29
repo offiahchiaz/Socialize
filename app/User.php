@@ -57,4 +57,9 @@ class User extends Authenticatable
         return $this->friendOfMine()->wherePivot('accepted', true)->get()
             ->merge($this->friendOf()->wherePivot('accepted', true)->get());
     }
+
+    public function friendRequests()
+    {
+        return $this->friendOfMine()->wherePivot('accepted', false)->get();
+    }
 }

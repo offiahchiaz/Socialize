@@ -38,10 +38,10 @@
                     @if (Auth::check())
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item active">
-                                <a class="nav-link" href="#">Timeline</a>
+                                <a class="nav-link" href="/">Timeline</a>
                             </li>
                             <li class="nav-item active">
-                                <a class="nav-link" href="#">Friends</a>
+                                <a class="nav-link" href="/friends">Friends</a>
                             </li>
                         </ul>
 

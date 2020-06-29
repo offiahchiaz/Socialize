@@ -18,7 +18,7 @@
                                 <hr>
                             </div>
                             <div class="col-lg-4 col-lg-offset-3">
-                                <!-- Friendsm friend requests -->
+                                <!-- Friends, friend requests -->
                                 <h4>{{ $user->name }}'s friends.</h4>
 
                                 @if (!$user->friends()->count())

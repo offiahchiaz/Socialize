@@ -26,7 +26,7 @@
                                 @elseif (Auth::user()->isFriendsWith($user))    
                                     <p>You and {{ $user->name }} are friends</p>
                                 @else 
-                                    <a href="#" class="btn btn-primary">Add as friend</a>
+                            <a href="/friends/add/{{ $user->name }}" class="btn btn-primary">Add as friend</a>
                                 @endif
 
                                 <h4>{{ $user->name }}'s friends.</h4>

@@ -21,7 +21,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/search', 'SearchController@getResults');
-Route::get('/user/{username}', 'ProfileController@getProfile');
+Route::get('/user/{username}', 'ProfileController@getProfile')->name('profile.index');
 Route::get('/profile/edit', 'ProfileController@getEdit')->name('profile.edit');
 Route::post('/profile/edit', 'ProfileController@postEdit');
 Route::get('/friends', 'FriendController@getIndex');
+Route::get('/friends/add/{username}', 'FriendController@getAdd');

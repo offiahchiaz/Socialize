@@ -21,6 +21,8 @@
                                 <!-- Friends, friend requests -->
                                 @if (Auth::user()->hasFriendRequestPending($user))
                                     <p>Waiting for {{ $user->name }} to accept your request.</p>
+                                @elseif (Auth::user()->hasFriendRequestRecieved($user))   
+                                    <a href="#" class="btn btn-primary">Accep friend request</a> 
                                 @endif
 
                                 <h4>{{ $user->name }}'s friends.</h4>

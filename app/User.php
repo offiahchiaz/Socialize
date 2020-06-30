@@ -82,7 +82,7 @@ class User extends Authenticatable
     // Check if we have received a friend request from a particular user
     public function hasFriendRequestRecieved(User $user)
     {
-        return (bool) $this->friendRequests()->where('id', $user->id)-count();
+        return (bool) $this->friendRequests()->where('id', $user->id)->count();
     }
 
     // Method to add a friend

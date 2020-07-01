@@ -26,3 +26,4 @@ Route::get('/profile/edit', 'ProfileController@getEdit')->name('profile.edit');
 Route::post('/profile/edit', 'ProfileController@postEdit');
 Route::get('/friends', 'FriendController@getIndex');
 Route::get('/friends/add/{username}', 'FriendController@getAdd');
+Route::get('/friends/accept/{username}', 'FriendController@getAccept');

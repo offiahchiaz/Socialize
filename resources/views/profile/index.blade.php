@@ -22,10 +22,10 @@
                                 @if (Auth::user()->hasFriendRequestPending($user))
                                     <p>Waiting for {{ $user->name }} to accept your request.</p>
                                 @elseif (Auth::user()->hasFriendRequestRecieved($user))   
-                                    <a href="#" class="btn btn-primary">Accep friend request</a> 
+                            <a href="/friends/accept/{{ $user->name }}" class="btn btn-primary">Accep friend request</a> 
                                 @elseif (Auth::user()->isFriendsWith($user))    
                                     <p>You and {{ $user->name }} are friends</p>
-                                @else 
+                                @elseif (Auth::user()->id !== $user->id) 
                             <a href="/friends/add/{{ $user->name }}" class="btn btn-primary">Add as friend</a>
                                 @endif
 
